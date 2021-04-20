@@ -30,7 +30,7 @@ class FirstViewController: UIViewController {
         iphoneNum.layer.cornerRadius = 0
         iphoneNum.layer.borderWidth = 1
         iphoneNum.layer.borderColor = UIColor.gray.cgColor
-        iphoneNum.placeholder = "请输入你的手机号"
+        iphoneNum.placeholder = "请添加你的手机号"
         
         iphoneButton.snp.makeConstraints({make in
             make.width.equalToSuperview().multipliedBy(0.8)
