@@ -8,7 +8,7 @@ target 'XunCha' do
   # Pods for XunCha
 	pod 'SnapKit'
 	pod 'Alamofire'
-#	pod 'ArcGIS-Runtime-SDK-iOS'
+	pod 'ArcGIS-Runtime-SDK-iOS'
 	pod 'ArcGIS-Runtime-Toolkit-iOS'
   pod 'SideMenu'
   pod 'KeychainSwift', '~> 19.0'

@@ -60,12 +60,15 @@ class FirstViewController: UIViewController {
                 
                 let parameter = [
                     "iphoneNumber": iphoneNum.text!,
-                    "iosNumber": UIDevice.current.identifierForVendor!.uuidString
+                    "iosNumber": UIDevice.current.identifierForVendor!.uuidString,
+                    "can" : "true"
                 ]
-                AF.request("http://192.168.31.126:8080/jhxc/addios", method: .post, parameters: parameter, encoder: URLEncodedFormParameterEncoder(destination: .httpBody)).responseString{ response in
+                // http://61.240.19.180:8000/jinghai/jhxc/addios
+                AF.request("http://61.240.19.180:8000/jinghai/jhxc/addios", method: .post, parameters: parameter, encoder: URLEncodedFormParameterEncoder(destination: .httpBody)).responseString{ response in
                     switch response.result {
                     case .success:
                         if (response.value! == "success") {
+                            goon = true
                             let rootVC = RootViewController()
                             let nav = UINavigationController(rootViewController: rootVC)
                             nav.modalPresentationStyle = .fullScreen

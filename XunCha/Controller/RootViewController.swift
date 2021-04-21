@@ -11,7 +11,7 @@ import SnapKit
 import Alamofire
 import SideMenu
 import ArcGISToolkit
-
+var goon = false
 class RootViewController: UIViewController {
     
 //    var valueBtn = UIButton()
@@ -33,8 +33,9 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
-        setMap()
         setUI()
+        setMap()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,6 +53,7 @@ class RootViewController: UIViewController {
 
 extension RootViewController {
     func setMap() {
+        
         mapView = AGSMapView(frame: .zero)
         self.view.addSubview(mapView)
         mapView.snp.makeConstraints{(make) in
@@ -60,8 +62,10 @@ extension RootViewController {
             make.top.equalToSuperview()
         }
         mapView.map = AGSMap()
-        basemap = AGSBasemap(baseLayer: jhyxLayer)
-        mapView.map?.basemap = basemap!
+        //basemap = AGSBasemap(baseLayer: jhyxLayer)
+        if goon {
+            mapView.map?.basemap = AGSBasemap(baseLayer: jhyxLayer)
+        }
         
         if(CLLocationManager.authorizationStatus() != .denied) {
             print("应用拥有定位权限")
@@ -99,15 +103,20 @@ extension RootViewController {
         RootViewController.measureToolbar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         RootViewController.measureToolbar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         RootViewController.measureToolbar.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
+        RootViewController.measureToolbar.isHidden = true
+        mapView.sketchEditor?.stop()
     }
     
     func setUI() {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", style: .done, target: self, action: .menuSelector)
-        RootViewController.measureToolbar.isHidden = true
-        mapView.sketchEditor?.stop()
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+        
     }
+    
+//    @objc func refresh() {
+//        mapView.map?.basemap = AGSBasemap(baseLayer: jhyxLayer)
+//    }
         
 }
 

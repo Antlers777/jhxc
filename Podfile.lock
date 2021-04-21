@@ -11,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - ArcGIS-Runtime-SDK-iOS
   - ArcGIS-Runtime-Toolkit-iOS
   - KeychainSwift (~> 19.0)
   - MBProgressHUD (~> 1.2.0)
@@ -39,6 +40,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 8d9d65c6d879bffccb26ac62e6308c69e0ddb1e0
+PODFILE CHECKSUM: d7037868aa8a985304771f3852f09f3c16ed75ec
 
 COCOAPODS: 1.10.1

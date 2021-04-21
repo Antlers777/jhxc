@@ -9,7 +9,9 @@ import UIKit
 import SideMenu
 import Alamofire
 import SwiftyJSON
+import ArcGIS
 @main
+
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -25,36 +27,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !isNotFirst {
             UserDefaults.standard.set(true, forKey: "isFirst")
             UserDefaults.standard.synchronize()
-            print("第一次")
             // 跳转 填写手机号的界面
             let first = FirstViewController()
             window?.rootViewController = first
             
         } else {
-            print("不是第一次")
+    
+            
             // 判断 是否可以进入
             if (UIDevice.current.identifierForVendor?.uuidString == nil) {
                 // shantui
                 shantui()
             } else {
-                AF.request("http://192.168.31.126:8080/jhxc/queryios", method: .get, parameters: ["iosNumber": UIDevice.current.identifierForVendor!.uuidString]).responseJSON{ response in
-                    let json = JSON(response.data)
-                    switch response.result {
-                    case .success:
-                        
-                        if json["data"] == "200" {
-                            // 查询到结果 具有许可 可以使用
-//                            let rootVC = RootViewController()
-//                            let nav = UINavigationController(rootViewController: rootVC)
-//                            self.window?.rootViewController = nav
-                        } else {
+                DispatchQueue.main.async {
+                    //http://61.240.19.180:8000/jinghai/jhxc/queryios
+                    AF.request("http://61.240.19.180:8000/jinghai/jhxc/querycan", method: .get, parameters: ["iosNumber": UIDevice.current.identifierForVendor!.uuidString]).responseJSON{ response in
+                        let json = JSON(response.data)
+                        switch response.result {
+                        case .success:
+                            
+                            if json["data"] == "true" {
+                                print("成功")
+                                goon = true
+                                mapView.map?.basemap = AGSBasemap(baseLayer: jhyxLayer)
+                            } else if json["data"] == "false"{
+                                self.shantui()
+                            } else {
+                                goon = false
+                                let first = FirstViewController()
+                                self.window?.rootViewController = first
+                            }
+                            break
+                        case .failure(let err):
                             self.shantui()
                         }
-                        break
-                    case .failure(let err):
-                        self.shantui()
                     }
                 }
+                
             }
             
         }
