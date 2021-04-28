@@ -35,8 +35,9 @@ extension MenuTableViewController {
             make.height.equalToSuperview()
         })
         
-        LocationCell.locationSwitch.isOn = UserDefaults.standard.bool(forKey: "location")
+        
         EditCell.editSwitch.isOn = UserDefaults.standard.bool(forKey: "edit")
+        MarkCell.markSwitch.isOn = UserDefaults.standard.bool(forKey: "mark")
         
         
     }
@@ -51,13 +52,11 @@ extension MenuTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            
-            let cell = LocationCell(style: .default, reuseIdentifier: "id")
-            return cell
-        case 1:
             let cell = EditCell(style: .default, reuseIdentifier: "id")
             return cell
-            
+        case 1:
+            let cell = MarkCell(style: .default, reuseIdentifier: "id")
+            return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: "id")
             return cell

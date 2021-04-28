@@ -14,6 +14,8 @@ class FirstViewController: UIViewController {
     
     var iphoneNum = UITextField()
     var iphoneButton = UIButton()
+    var goUseButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,8 +47,61 @@ class FirstViewController: UIViewController {
         iphoneButton.backgroundColor = .systemBlue
         
         iphoneButton.addTarget(self, action: #selector(saveIphoneNumber), for: .touchUpInside)
+        
+        
+        self.view.addSubview(goUseButton)
+        goUseButton.snp.makeConstraints({make in
+            make.width.equalTo(100)
+            make.height.equalTo(40)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-40)
+        })
+        goUseButton.setTitle("访客使用 >", for: .normal)
+        goUseButton.setTitleColor(.systemBlue, for: .normal)
+        goUseButton.addTarget(self, action: #selector(goRoot), for: .touchUpInside)
     }
     
+    @objc func goRoot() {
+        
+        if (UIDevice.current.identifierForVendor?.uuidString == nil) {
+            // shantui
+            let b = UIButton()
+            b.snp.makeConstraints({ make in
+                make.width.equalToSuperview()
+            })
+        } else {
+            
+            let parameter = [
+                "iphoneNumber": "",
+                "iosNumber": UIDevice.current.identifierForVendor!.uuidString,
+                "can" : "true"
+            ]
+            // http://61.240.19.180:8000/jinghai/jhxc/addios
+            AF.request("http://61.240.19.180:8000/jinghai/jhxc/addios", method: .post, parameters: parameter, encoder: URLEncodedFormParameterEncoder(destination: .httpBody)).responseString{ response in
+                switch response.result {
+                case .success:
+                    if (response.value! == "success") {
+                        goon = true
+                        let rootVC = RootViewController()
+                        let nav = UINavigationController(rootViewController: rootVC)
+                        nav.modalPresentationStyle = .fullScreen
+                        self.present(nav, animated: true, completion: nil)
+                    } else {
+                        // shantui
+                        let b = UIButton()
+                        b.snp.makeConstraints({ make in
+                            make.width.equalToSuperview()
+                        })
+                    }
+                    break
+                case let .failure(error):
+                    print(error)
+                    break
+                }
+            }
+        }
+        
+    }
     
     @objc func saveIphoneNumber() {
         if isPhoneNumber(phoneNumber: iphoneNum.text ?? "") {

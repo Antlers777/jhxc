@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 
 extension Selector {
-    static let locationSelector = #selector(LocationCell.location)
+    
     static let editSelector = #selector(EditCell.edit)
+    static let markSelector = #selector(MarkCell.mark)
     static let menuSelector = #selector(RootViewController.menu)
+    static let trashMarkSelector = #selector(MarkViewController.trashMark(_:))
+    static let saveMarkSelector = #selector(MarkViewController.saveMark(_:))
 }

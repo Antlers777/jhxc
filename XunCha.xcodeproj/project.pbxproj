@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0A0644212629655E00C56C6C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0644202629655E00C56C6C /* FirstViewController.swift */; };
+		0A1086972637F20400B120AD /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1086962637F20400B120AD /* MarkViewController.swift */; };
+		0A10869A26380E9C00B120AD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869926380E9C00B120AD /* UIImage+Extension.swift */; };
+		0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869C2638EDDD00B120AD /* MenuButton.swift */; };
+		0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */; };
 		0A447F912623EC7900975E8D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A447F902623EC7900975E8D /* RootViewController.swift */; };
 		0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A562EB92623D4710029C2A5 /* AppDelegate.swift */; };
 		0A562EC12623D4710029C2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A562EBF2623D4710029C2A5 /* Main.storyboard */; };
@@ -22,7 +26,6 @@
 		0A93B57526256F3B00F61610 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93B57426256F3B00F61610 /* MenuCell.swift */; };
 		0AA23B222626DA27009D0115 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B212626DA27009D0115 /* ToolBar.swift */; };
 		0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B242627C7FE009D0115 /* ShowValue.swift */; };
-		0AA23B28262809D5009D0115 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B27262809D5009D0115 /* File.swift */; };
 		0AA23B2B2628207A009D0115 /* MeaBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B2A2628207A009D0115 /* MeaBar.swift */; };
 		0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0006D262D187C00D200A7 /* ProgressHUD.swift */; };
 		0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAD715262689CE00E80815 /* SegmentedControl.swift */; };
@@ -31,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		0A0644202629655E00C56C6C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0A1086962637F20400B120AD /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
+		0A10869926380E9C00B120AD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		0A10869C2638EDDD00B120AD /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSegmentedControl.swift; sourceTree = "<group>"; };
 		0A447F8C2623E83500975E8D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = ../../../Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic/ArcGIS.framework; sourceTree = "<group>"; };
 		0A447F902623EC7900975E8D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		0A562EB62623D4710029C2A5 /* XunCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +55,6 @@
 		0A93B57426256F3B00F61610 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		0AA23B212626DA27009D0115 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		0AA23B242627C7FE009D0115 /* ShowValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValue.swift; sourceTree = "<group>"; };
-		0AA23B27262809D5009D0115 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0AA23B2A2628207A009D0115 /* MeaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaBar.swift; sourceTree = "<group>"; };
 		0AC0006D262D187C00D200A7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		0ACAD715262689CE00E80815 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0A93B559262529A500F61610 /* Selector.swift */,
+				0A10869926380E9C00B120AD /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -153,8 +160,9 @@
 				0A93B57426256F3B00F61610 /* MenuCell.swift */,
 				0ACAD715262689CE00E80815 /* SegmentedControl.swift */,
 				0AA23B212626DA27009D0115 /* ToolBar.swift */,
-				0AA23B27262809D5009D0115 /* File.swift */,
 				0AA23B2A2628207A009D0115 /* MeaBar.swift */,
+				0A10869C2638EDDD00B120AD /* MenuButton.swift */,
+				0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 				0A447F902623EC7900975E8D /* RootViewController.swift */,
 				0A93B56E2625419B00F61610 /* MenuTableViewController.swift */,
 				0A0644202629655E00C56C6C /* FirstViewController.swift */,
+				0A1086962637F20400B120AD /* MarkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 				0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */,
 				0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */,
 				0A93B55A262529A500F61610 /* Selector.swift in Sources */,
+				0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */,
 				0A93B56F2625419B00F61610 /* MenuTableViewController.swift in Sources */,
 				0A93B57526256F3B00F61610 /* MenuCell.swift in Sources */,
 				0A93B5722625498F00F61610 /* RootToolView.swift in Sources */,
@@ -330,8 +340,10 @@
 				0A93B55E26252ABA00F61610 /* SelectorInterface.swift in Sources */,
 				0A562EEA2623E5350029C2A5 /* Map.swift in Sources */,
 				0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */,
+				0A10869A26380E9C00B120AD /* UIImage+Extension.swift in Sources */,
 				0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */,
-				0AA23B28262809D5009D0115 /* File.swift in Sources */,
+				0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */,
+				0A1086972637F20400B120AD /* MarkViewController.swift in Sources */,
 				0A447F912623EC7900975E8D /* RootViewController.swift in Sources */,
 				0AA23B222626DA27009D0115 /* ToolBar.swift in Sources */,
 			);
@@ -392,6 +404,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wang jian (CJ75VZVB8W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -414,6 +427,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = jhxcappstore;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -453,6 +467,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wang jian (CJ75VZVB8W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -468,6 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = jhxcappstore;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -494,8 +510,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.XunCha;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -523,8 +539,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.XunCha;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -12,29 +12,20 @@ import Alamofire
 import SideMenu
 import ArcGISToolkit
 var goon = false
+
 class RootViewController: UIViewController {
-    
-//    var valueBtn = UIButton()
-//    var toolBar = UIView()
-//    var segmentedControl = UISegmentedControl(items: ["点","线","手绘线","图形","手绘图形"])
-    
-//    var undoBtn = UIButton()
-//    var redoBtn = UIButton()
-//    var clearBtn = UIButton()
-    
-//    private var sketchEditor: AGSSketchEditor!
-    
+
     static var measureToolbar: MeasureToolbar!
-    lazy var selectorInterface: SelectorInterface = SelectorInterface()
-    lazy var locationButton: LocationButton = LocationButton() // 定位按钮
-    
+    static let markSegmentC = UISegmentedControl(items: ["符号", "文字"])
+    let compass = Compass(mapView: mapView)
     var basemap: AGSBasemap?  // 地图view
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
-        setUI()
+        
         setMap()
+        setUI()
         
     }
     
@@ -96,6 +87,10 @@ extension RootViewController {
         mapView.backgroundGrid?.color = .white
         mapView.backgroundGrid?.gridLineWidth = 0
         
+        //取消放大镜
+        mapView.interactionOptions.isMagnifierEnabled = false
+        
+        // 测量工具
         RootViewController.measureToolbar = MeasureToolbar(mapView: mapView)
         RootViewController.measureToolbar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(RootViewController.measureToolbar)
@@ -105,19 +100,91 @@ extension RootViewController {
         RootViewController.measureToolbar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         RootViewController.measureToolbar.isHidden = true
         mapView.sketchEditor?.stop()
+        
+        //指南针
+        compass.autoHide = false
+        self.view.addSubview(compass)
+        compass.snp.makeConstraints({make in
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(60)
+        })
+        
+        //比例尺
+//        let width = CGFloat(200)
+//        let xMargin = CGFloat(300)
+//        let yMargin = CGFloat(10)
+//        
+//        // lower left scalebar
+//        let sb = Scalebar(mapView: mapView)
+//        sb.units = .metric
+//        sb.alignment = .left
+//        sb.style = .alternatingBar
+//        view.addSubview(sb)
+//        
+//        // add constraints so it's anchored to lower left corner
+//        sb.translatesAutoresizingMaskIntoConstraints = false
+//        sb.widthAnchor.constraint(equalToConstant: width).isActive = true
+//        sb.bottomAnchor.constraint(equalTo: mapView.attributionTopAnchor, constant: -yMargin).isActive = true
+//        sb.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: xMargin).isActive = true
+        
+    
+        //渲染层
+        mapView.touchDelegate = self
+        mapView.graphicsOverlays.add(graphicsOverlay)
+        
+        // callout
+        mapView.callout.titleColor = .black
+        mapView.callout.detailColor = .gray
+        mapView.callout.delegate = self
+        
     }
     
     func setUI() {
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", style: .done, target: self, action: .menuSelector)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+        let menuBtn = MenuButton()
+        view.addSubview(menuBtn)
+        menuBtn.snp.makeConstraints({make in
+            make.width.height.equalTo(40)
+            make.top.equalToSuperview().offset(60)
+            make.left.equalToSuperview().offset(10)
+        })
+        menuBtn.addTarget(self, action: .menuSelector, for: .touchUpInside)
         
+        let locationBtn = LocationButton()
+        view.addSubview(locationBtn)
+        locationBtn.snp.makeConstraints({make in
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+            make.bottom.equalToSuperview().offset(-100)
+            make.left.equalToSuperview().offset(10)
+        })
+        
+        
+        view.addSubview(RootViewController.markSegmentC)
+        RootViewController.markSegmentC.isHidden = true
+        RootViewController.markSegmentC.snp.makeConstraints({make in
+            make.width.equalTo(200)
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(menuBtn.snp.centerY)
+            make.height.equalTo(30)
+        })
+        RootViewController.markSegmentC.backgroundColor = .white
+        RootViewController.markSegmentC.selectedSegmentIndex = 0
+        RootViewController.markSegmentC.layer.masksToBounds = true
+        RootViewController.markSegmentC.tintColor = .red
+        RootViewController.markSegmentC.accessibilityNavigationStyle = .automatic
+        if #available(iOS 13.0, *) {
+            RootViewController.markSegmentC.selectedSegmentTintColor = UIColor(red: 18/255, green: 150/255, blue: 219/255, alpha: 1)
+        } else {
+            // Fallback on earlier versions
+        }
+        RootViewController.markSegmentC.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
+        
+
+        
+
     }
     
-//    @objc func refresh() {
-//        mapView.map?.basemap = AGSBasemap(baseLayer: jhyxLayer)
-//    }
-        
+
 }
 
 extension RootViewController {
@@ -136,4 +203,76 @@ extension RootViewController {
     }
 }
 
+
+extension RootViewController: AGSGeoViewTouchDelegate {
+    // 长按
+    func geoView(_ geoView: AGSGeoView, didLongPressAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
+        if MarkCell.markSwitch.isOn { //开启标记
+            switch RootViewController.markSegmentC.selectedSegmentIndex {
+            case 0:
+                let imageName = "mark"
+                let pinSymbol = AGSPictureMarkerSymbol(image: UIImage(named: imageName)!)
+                pinSymbol.width = 30
+                pinSymbol.height = 30
+                let graphic = AGSGraphic(geometry: mapPoint, symbol: pinSymbol, attributes: nil)
+                graphicsOverlay.graphics.add(graphic)
+            default:
+                
+                let textSymbol = AGSTextSymbol(text: "哈哈", color: .white, size: 20, horizontalAlignment: .center, verticalAlignment: .middle)
+                let graphic = AGSGraphic(geometry: mapPoint, symbol: textSymbol, attributes: nil)
+                graphicsOverlay.graphics.add(graphic)
+                break
+            }
+        }
+    }
+    
+    // 长按结束
+    func geoView(_ geoView: AGSGeoView, didEndLongPressAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
+        if MarkCell.markSwitch.isOn { //开启标记
+            switch RootViewController.markSegmentC.selectedSegmentIndex {
+            case 0:
+                // 标记成功后遂即跳转信息界面
+                let mark = MarkViewController()
+                let nav = UINavigationController(rootViewController: mark)
+                self.present(nav, animated: true, completion: nil)
+            default:
+                 break
+            }
+            
+        }
+    }
+    
+    // 用力按压
+    func geoView(_ geoView: AGSGeoView, didForceTouchAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint, force: Double) {
+        
+    }
+    
+    //单击
+    func geoView(_ geoView: AGSGeoView, didTapAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
+        let tolerance: Double = 12
+        mapView.identify(graphicsOverlay, screenPoint: screenPoint, tolerance: tolerance, returnPopupsOnly: false, maximumResults: 10, completion: { [weak self] (result: AGSIdentifyGraphicsOverlayResult) in
+            if let error = result.error {
+                
+            } else {
+                if !result.graphics.isEmpty {
+                    if mapView.callout.isHidden {
+                        mapView.callout.title = "河道"
+                        mapView.callout.detail = String(format: "x: %.2f,y: %.2f", mapPoint.x,mapPoint.y)
+                        mapView.callout.show(at: mapPoint, screenOffset: CGPoint.zero, rotateOffsetWithMap: true, animated: true)
+                    }
+                } else {
+                    mapView.callout.dismiss()
+                }
+            }
+        })
+    }
+    
+    
+}
+
+extension RootViewController: AGSCalloutDelegate {
+    func didTapAccessoryButton(for callout: AGSCallout) {
+        print("触发callout的附件按钮")
+    }
+}
 

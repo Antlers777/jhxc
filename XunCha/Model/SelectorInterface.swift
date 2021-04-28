@@ -8,23 +8,6 @@
 import Foundation
 import ArcGIS
 class SelectorInterface: NSObject {
-    open func location(bool: Bool) {
-        if bool {
-            // 开始定位
-            mapView.locationDisplay.start { (error: Error?) in
-                if let error = error {
-                    print(error)
-                }
-            }
-            mapView.locationDisplay.autoPanMode = .compassNavigation
-            mapView.locationDisplay.navigationPointHeightFactor = 0.5
-            
-            
-            
-        } else {
-            mapView.locationDisplay.stop()
-        }
-    }
     
     open func edit(bool: Bool) {
         
@@ -53,6 +36,17 @@ class SelectorInterface: NSObject {
             
         }
     }
+    
+    open func mark(bool: Bool) {
+        if bool {
+            
+            
+            
+        } else {
+            
+        }
+    }
+    
     
 
 }
