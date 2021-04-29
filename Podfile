@@ -14,4 +14,6 @@ target 'XunCha' do
   pod 'KeychainSwift', '~> 19.0'
   pod 'SwiftyJSON'
   pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'SCLAlertView'
+  pod 'FMDB'
 end

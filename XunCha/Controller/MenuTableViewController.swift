@@ -39,7 +39,9 @@ extension MenuTableViewController {
         EditCell.editSwitch.isOn = UserDefaults.standard.bool(forKey: "edit")
         MarkCell.markSwitch.isOn = UserDefaults.standard.bool(forKey: "mark")
         
-        
+        self.navigationController?.navigationBar.barTintColor = .groupTableViewBackground
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "1.png"), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 

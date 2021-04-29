@@ -14,9 +14,9 @@ import ArcGISToolkit
 var goon = false
 
 class RootViewController: UIViewController {
-
+    var mark = MarkMenu.normal
     static var measureToolbar: MeasureToolbar!
-    static let markSegmentC = UISegmentedControl(items: ["符号", "文字"])
+    static let markSegmentC = UISegmentedControl(items: ["⭐️","❌","✏️"])
     let compass = Compass(mapView: mapView)
     var basemap: AGSBasemap?  // 地图view
     override func viewDidLoad() {
@@ -105,8 +105,9 @@ extension RootViewController {
         compass.autoHide = false
         self.view.addSubview(compass)
         compass.snp.makeConstraints({make in
-            make.right.equalToSuperview().offset(-10)
-            make.top.equalTo(60)
+            make.width.height.equalTo(40)
+            make.top.equalToSuperview().offset(120)
+            make.left.equalToSuperview().offset(20)
         })
         
         //比例尺
@@ -145,7 +146,7 @@ extension RootViewController {
         menuBtn.snp.makeConstraints({make in
             make.width.height.equalTo(40)
             make.top.equalToSuperview().offset(60)
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(20)
         })
         menuBtn.addTarget(self, action: .menuSelector, for: .touchUpInside)
         
@@ -155,33 +156,43 @@ extension RootViewController {
             make.width.equalTo(40)
             make.height.equalTo(40)
             make.bottom.equalToSuperview().offset(-100)
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(20)
         })
         
         
         view.addSubview(RootViewController.markSegmentC)
         RootViewController.markSegmentC.isHidden = true
         RootViewController.markSegmentC.snp.makeConstraints({make in
-            make.width.equalTo(200)
-            make.centerX.equalToSuperview()
+            make.width.equalTo(120)
+            make.right.equalToSuperview().offset(-20)
             make.centerY.equalTo(menuBtn.snp.centerY)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
         })
         RootViewController.markSegmentC.backgroundColor = .white
         RootViewController.markSegmentC.selectedSegmentIndex = 0
         RootViewController.markSegmentC.layer.masksToBounds = true
         RootViewController.markSegmentC.tintColor = .red
         RootViewController.markSegmentC.accessibilityNavigationStyle = .automatic
-        if #available(iOS 13.0, *) {
-            RootViewController.markSegmentC.selectedSegmentTintColor = UIColor(red: 18/255, green: 150/255, blue: 219/255, alpha: 1)
-        } else {
-            // Fallback on earlier versions
+        RootViewController.markSegmentC.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor : UIColor.systemBlue], for: .normal)
+        
+        //
+        RootViewController.markSegmentC.addTarget(self, action: .markSegmentValueSelector, for: .valueChanged)
+        
+
+    }
+    
+    
+    @objc func segmentDidchange(_ segmented:UISegmentedControl) {
+        switch segmented.selectedSegmentIndex {
+        case 0:
+            mark = MarkMenu.normal
+        case 1:
+            mark = MarkMenu.x
+        case 2:
+            mark = MarkMenu.text
+        default:
+            mark = MarkMenu.normal
         }
-        RootViewController.markSegmentC.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.black], for: .normal)
-        
-
-        
-
     }
     
 
@@ -193,7 +204,7 @@ extension RootViewController {
         let menu = SideMenuNavigationController(rootViewController: MenuTableViewController())
         
         menu.menuWidth = 150
-        menu.isNavigationBarHidden = false //侧栏菜单显示导航栏
+        menu.isNavigationBarHidden = true //侧栏菜单显示导航栏
         // 将其作为默认的左侧菜单
         SideMenuManager.default.leftMenuNavigationController = menu
         // 显示侧栏菜单
@@ -203,26 +214,62 @@ extension RootViewController {
     }
 }
 
-
+import SCLAlertView
 extension RootViewController: AGSGeoViewTouchDelegate {
-    // 长按
+    // 长按  "📍", "⛰️", "🚦", "🌊", "🏠", "🚾", "✏️"
     func geoView(_ geoView: AGSGeoView, didLongPressAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
         if MarkCell.markSwitch.isOn { //开启标记
-            switch RootViewController.markSegmentC.selectedSegmentIndex {
-            case 0:
-                let imageName = "mark"
-                let pinSymbol = AGSPictureMarkerSymbol(image: UIImage(named: imageName)!)
-                pinSymbol.width = 30
-                pinSymbol.height = 30
-                let graphic = AGSGraphic(geometry: mapPoint, symbol: pinSymbol, attributes: nil)
-                graphicsOverlay.graphics.add(graphic)
+            switch mark {
+            case .normal:
+                let normalSymbol = AGSTextSymbol(text: "⭐️", color: .systemYellow, size: 25, horizontalAlignment: .center, verticalAlignment: .middle)
+                let normalGraphic = AGSGraphic(geometry: mapPoint, symbol: normalSymbol, attributes: nil)
+                graphicsOverlay.graphics.add(normalGraphic)
+            case .x:
+                let normalSymbol = AGSTextSymbol(text: "❌", color: .systemRed, size: 25, horizontalAlignment: .center, verticalAlignment: .middle)
+                let normalGraphic = AGSGraphic(geometry: mapPoint, symbol: normalSymbol, attributes: nil)
+                graphicsOverlay.graphics.add(normalGraphic)
+            case .text:
+                let alert = SCLAlertView()
+                let textFieled = alert.addTextField("输入描述......")
+                alert.addButton("确定", action: {
+                    guard let text = textFieled.text else {
+                        return
+                    }
+                    let textSymbol = AGSTextSymbol(text: text, color: .green, size: 20, horizontalAlignment: .center, verticalAlignment: .middle)
+                    let graphic = AGSGraphic(geometry: mapPoint, symbol: textSymbol, attributes: nil)
+                    graphicsOverlay.graphics.add(graphic)
+                })
+                alert.showEdit("", subTitle: "添加", closeButtonTitle: "取消", colorStyle: 0x1296db, colorTextButton: 0xFFFFFF,  animationStyle: .bottomToTop)
             default:
-                
-                let textSymbol = AGSTextSymbol(text: "哈哈", color: .white, size: 20, horizontalAlignment: .center, verticalAlignment: .middle)
-                let graphic = AGSGraphic(geometry: mapPoint, symbol: textSymbol, attributes: nil)
-                graphicsOverlay.graphics.add(graphic)
                 break
             }
+            
+            
+            
+            
+//
+//
+//            switch RootViewController.markSegmentC.selectedSegmentIndex {
+//            case 0:
+//                let imageName = "mark"
+//                let pinSymbol = AGSPictureMarkerSymbol(image: UIImage(named: imageName)!)
+//                pinSymbol.width = 30
+//                pinSymbol.height = 30
+//                let graphic = AGSGraphic(geometry: mapPoint, symbol: pinSymbol, attributes: nil)
+//                graphicsOverlay.graphics.add(graphic)
+//            default:
+//                let alert = SCLAlertView()
+//                let textFieled = alert.addTextField("输入描述......")
+//                alert.addButton("确定", action: {
+//                    guard let text = textFieled.text else {
+//                        return
+//                    }
+//                    let textSymbol = AGSTextSymbol(text: text, color: .white, size: 20, horizontalAlignment: .center, verticalAlignment: .middle)
+//                    let graphic = AGSGraphic(geometry: mapPoint, symbol: textSymbol, attributes: nil)
+//                    graphicsOverlay.graphics.add(graphic)
+//                })
+//                alert.showEdit("", subTitle: "添加", closeButtonTitle: "取消", colorStyle: 0x1296db, colorTextButton: 0xFFFFFF,  animationStyle: .bottomToTop)
+//            }
         }
     }
     

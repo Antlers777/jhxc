@@ -12,6 +12,7 @@
 		0A10869A26380E9C00B120AD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869926380E9C00B120AD /* UIImage+Extension.swift */; };
 		0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869C2638EDDD00B120AD /* MenuButton.swift */; };
 		0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */; };
+		0A11FEB9263A5D9F00356D8B /* MarkMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */; };
 		0A447F912623EC7900975E8D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A447F902623EC7900975E8D /* RootViewController.swift */; };
 		0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A562EB92623D4710029C2A5 /* AppDelegate.swift */; };
 		0A562EC12623D4710029C2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A562EBF2623D4710029C2A5 /* Main.storyboard */; };
@@ -28,6 +29,9 @@
 		0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B242627C7FE009D0115 /* ShowValue.swift */; };
 		0AA23B2B2628207A009D0115 /* MeaBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B2A2628207A009D0115 /* MeaBar.swift */; };
 		0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0006D262D187C00D200A7 /* ProgressHUD.swift */; };
+		0AC67F50263A87570099BBFD /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC67F4F263A87510099BBFD /* libsqlite3.0.tbd */; };
+		0AC67F54263A89A20099BBFD /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC67F53263A89A20099BBFD /* SQLiteManager.swift */; };
+		0AC67F5B263A8D550099BBFD /* MarkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC67F5A263A8D550099BBFD /* MarkEntity.swift */; };
 		0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAD715262689CE00E80815 /* SegmentedControl.swift */; };
 		A83C20FCF7F3DB5EF62C97D5 /* Pods_XunCha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A3FA3F21C0C565E88621F /* Pods_XunCha.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +42,7 @@
 		0A10869926380E9C00B120AD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0A10869C2638EDDD00B120AD /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSegmentedControl.swift; sourceTree = "<group>"; };
+		0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMenu.swift; sourceTree = "<group>"; };
 		0A447F8C2623E83500975E8D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = ../../../Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic/ArcGIS.framework; sourceTree = "<group>"; };
 		0A447F902623EC7900975E8D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		0A562EB62623D4710029C2A5 /* XunCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +62,10 @@
 		0AA23B242627C7FE009D0115 /* ShowValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValue.swift; sourceTree = "<group>"; };
 		0AA23B2A2628207A009D0115 /* MeaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaBar.swift; sourceTree = "<group>"; };
 		0AC0006D262D187C00D200A7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		0AC67F4F263A87510099BBFD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		0AC67F53263A89A20099BBFD /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		0AC67F56263A8B6C0099BBFD /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		0AC67F5A263A8D550099BBFD /* MarkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkEntity.swift; sourceTree = "<group>"; };
 		0ACAD715262689CE00E80815 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		65A6D1DF5825D1B0DD55F835 /* Pods-XunCha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunCha.debug.xcconfig"; path = "Target Support Files/Pods-XunCha/Pods-XunCha.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D422B3CF0064287D40A983 /* Pods-XunCha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunCha.release.xcconfig"; path = "Target Support Files/Pods-XunCha/Pods-XunCha.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC67F50263A87570099BBFD /* libsqlite3.0.tbd in Frameworks */,
 				A83C20FCF7F3DB5EF62C97D5 /* Pods_XunCha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +88,7 @@
 		0A447F8B2623E83500975E8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AC67F4F263A87510099BBFD /* libsqlite3.0.tbd */,
 				0A447F8C2623E83500975E8D /* ArcGIS.framework */,
 				F47A3FA3F21C0C565E88621F /* Pods_XunCha.framework */,
 			);
@@ -148,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0A562EC72623D4730029C2A5 /* Info.plist */,
+				0AC67F56263A8B6C0099BBFD /* Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -189,9 +201,12 @@
 		0A562EE82623E4F60029C2A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0AC67F59263A8CC60099BBFD /* Entity */,
+				0AC67F52263A89830099BBFD /* SQLite */,
 				0A562EE92623E5350029C2A5 /* Map.swift */,
 				0A93B55D26252ABA00F61610 /* SelectorInterface.swift */,
 				0AA23B242627C7FE009D0115 /* ShowValue.swift */,
+				0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +217,22 @@
 				0AC0006D262D187C00D200A7 /* ProgressHUD.swift */,
 			);
 			path = Third;
+			sourceTree = "<group>";
+		};
+		0AC67F52263A89830099BBFD /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				0AC67F53263A89A20099BBFD /* SQLiteManager.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		0AC67F59263A8CC60099BBFD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0AC67F5A263A8D550099BBFD /* MarkEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		38446D7B84409639CD53B4D8 /* Pods */ = {
@@ -331,15 +362,18 @@
 				0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */,
 				0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */,
 				0A93B55A262529A500F61610 /* Selector.swift in Sources */,
+				0AC67F54263A89A20099BBFD /* SQLiteManager.swift in Sources */,
 				0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */,
 				0A93B56F2625419B00F61610 /* MenuTableViewController.swift in Sources */,
 				0A93B57526256F3B00F61610 /* MenuCell.swift in Sources */,
 				0A93B5722625498F00F61610 /* RootToolView.swift in Sources */,
+				0AC67F5B263A8D550099BBFD /* MarkEntity.swift in Sources */,
 				0AA23B2B2628207A009D0115 /* MeaBar.swift in Sources */,
 				0A93B55526251EE700F61610 /* LocationButton.swift in Sources */,
 				0A93B55E26252ABA00F61610 /* SelectorInterface.swift in Sources */,
 				0A562EEA2623E5350029C2A5 /* Map.swift in Sources */,
 				0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */,
+				0A11FEB9263A5D9F00356D8B /* MarkMenu.swift in Sources */,
 				0A10869A26380E9C00B120AD /* UIImage+Extension.swift in Sources */,
 				0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */,
 				0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */,
@@ -514,6 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "XunCha/Supporting Files/Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = YES;
@@ -543,6 +578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "XunCha/Supporting Files/Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = YES;

@@ -15,4 +15,5 @@ extension Selector {
     static let menuSelector = #selector(RootViewController.menu)
     static let trashMarkSelector = #selector(MarkViewController.trashMark(_:))
     static let saveMarkSelector = #selector(MarkViewController.saveMark(_:))
+    static let markSegmentValueSelector = #selector(RootViewController.segmentDidchange)
 }
