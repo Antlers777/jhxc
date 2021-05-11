@@ -17,7 +17,7 @@
 		0A1BFD0E26467F0F00A8ABE1 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1BFD0D26467F0F00A8ABE1 /* ImagePreviewViewController.swift */; };
 		0A1BFD1026467F4400A8ABE1 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1BFD0F26467F4400A8ABE1 /* ImagePreviewCell.swift */; };
 		0A2129FF2648B69100421A9C /* ShowMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2129FE2648B69100421A9C /* ShowMarkViewController.swift */; };
-		0A309ED2264A121B005BDC53 /* EnlargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A309ED1264A121B005BDC53 /* EnlargeButton.swift */; };
+		0A309ED2264A121B005BDC53 /* EnlargeButton+NarrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A309ED1264A121B005BDC53 /* EnlargeButton+NarrowButton.swift */; };
 		0A447F912623EC7900975E8D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A447F902623EC7900975E8D /* RootViewController.swift */; };
 		0A4AD124264375A300F9DCA6 /* SQLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AD123264375A300F9DCA6 /* SQLModel.swift */; };
 		0A4AD1272643786A00F9DCA6 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AD1262643786A00F9DCA6 /* Mark.swift */; };
@@ -53,7 +53,7 @@
 		0A1BFD0D26467F0F00A8ABE1 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		0A1BFD0F26467F4400A8ABE1 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
 		0A2129FE2648B69100421A9C /* ShowMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMarkViewController.swift; sourceTree = "<group>"; };
-		0A309ED1264A121B005BDC53 /* EnlargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargeButton.swift; sourceTree = "<group>"; };
+		0A309ED1264A121B005BDC53 /* EnlargeButton+NarrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnlargeButton+NarrowButton.swift"; sourceTree = "<group>"; };
 		0A447F8C2623E83500975E8D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = ../../../Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic/ArcGIS.framework; sourceTree = "<group>"; };
 		0A447F902623EC7900975E8D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		0A4AD123264375A300F9DCA6 /* SQLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLModel.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				0AA23B2A2628207A009D0115 /* MeaBar.swift */,
 				0A10869C2638EDDD00B120AD /* MenuButton.swift */,
 				0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */,
-				0A309ED1264A121B005BDC53 /* EnlargeButton.swift */,
+				0A309ED1264A121B005BDC53 /* EnlargeButton+NarrowButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A309ED2264A121B005BDC53 /* EnlargeButton.swift in Sources */,
+				0A309ED2264A121B005BDC53 /* EnlargeButton+NarrowButton.swift in Sources */,
 				0A0644212629655E00C56C6C /* FirstViewController.swift in Sources */,
 				0A1BFD0E26467F0F00A8ABE1 /* ImagePreviewViewController.swift in Sources */,
 				0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */,

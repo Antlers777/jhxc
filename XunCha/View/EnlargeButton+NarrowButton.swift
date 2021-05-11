@@ -16,6 +16,7 @@ class EnlargeButton: UIButton {
         setTitle("+", for: .normal)
         setTitleColor(.systemBlue, for: .normal)
         backgroundColor = UIColor.white
+        titleLabel?.font = UIFont.systemFont(ofSize: 20)
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +32,7 @@ class NarrowButton: UIButton {
         setTitle("-", for: .normal)
         setTitleColor(.systemBlue, for: .normal)
         backgroundColor = .white
+        titleLabel?.font = UIFont.systemFont(ofSize: 20)
     }
     
     required init?(coder: NSCoder) {

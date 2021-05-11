@@ -172,7 +172,22 @@ extension RootViewController {
         //
         RootViewController.markSegmentC.addTarget(self, action: .markSegmentValueSelector, for: .valueChanged)
         
-        // 
+        // 添加 放大地图 缩小地图 的按钮
+        let narrowButton = NarrowButton()
+        //narrowButton.l
+        self.view.addSubview(narrowButton)
+        narrowButton.snp.makeConstraints({make in
+            make.width.height.equalTo(30)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-100)
+        })
+        let enlargeButton = EnlargeButton()
+        self.view.addSubview(enlargeButton)
+        enlargeButton.snp.makeConstraints({make in
+            make.width.height.equalTo(30)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalTo(narrowButton.snp.top).offset(-20)
+        })
         
 
     }
