@@ -15,7 +15,7 @@ class LocationButton: UIButton {
         setImage(UIImage(named: "location")?.reSizeImage(reSize: CGSize(width: 30, height: 30)), for: .normal)
         //setImage(UIImage(named: "location"), for: .selected)
         backgroundColor = .white
-        layer.cornerRadius = 8
+        layer.cornerRadius = 10
         self.addTarget(self, action: #selector(location), for: .touchUpInside)
     }
     

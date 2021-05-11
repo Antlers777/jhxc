@@ -16,4 +16,8 @@ target 'XunCha' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'SCLAlertView'
   pod 'FMDB'
+  pod 'ImagePicker'
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  pod 'RxBlocking', '~> 5.0'
 end

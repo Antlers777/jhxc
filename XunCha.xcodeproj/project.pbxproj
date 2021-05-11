@@ -13,7 +13,15 @@
 		0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869C2638EDDD00B120AD /* MenuButton.swift */; };
 		0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */; };
 		0A11FEB9263A5D9F00356D8B /* MarkMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */; };
+		0A1BFD0C26467DE800A8ABE1 /* TheMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1BFD0B26467DE800A8ABE1 /* TheMarkViewController.swift */; };
+		0A1BFD0E26467F0F00A8ABE1 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1BFD0D26467F0F00A8ABE1 /* ImagePreviewViewController.swift */; };
+		0A1BFD1026467F4400A8ABE1 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1BFD0F26467F4400A8ABE1 /* ImagePreviewCell.swift */; };
+		0A2129FF2648B69100421A9C /* ShowMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2129FE2648B69100421A9C /* ShowMarkViewController.swift */; };
+		0A309ED2264A121B005BDC53 /* EnlargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A309ED1264A121B005BDC53 /* EnlargeButton.swift */; };
 		0A447F912623EC7900975E8D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A447F902623EC7900975E8D /* RootViewController.swift */; };
+		0A4AD124264375A300F9DCA6 /* SQLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AD123264375A300F9DCA6 /* SQLModel.swift */; };
+		0A4AD1272643786A00F9DCA6 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AD1262643786A00F9DCA6 /* Mark.swift */; };
+		0A4AD12A2643C1A200F9DCA6 /* DrawGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AD1292643C1A200F9DCA6 /* DrawGraphics.swift */; };
 		0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A562EB92623D4710029C2A5 /* AppDelegate.swift */; };
 		0A562EC12623D4710029C2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A562EBF2623D4710029C2A5 /* Main.storyboard */; };
 		0A562EC32623D4730029C2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A562EC22623D4730029C2A5 /* Assets.xcassets */; };
@@ -25,14 +33,12 @@
 		0A93B56F2625419B00F61610 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93B56E2625419B00F61610 /* MenuTableViewController.swift */; };
 		0A93B5722625498F00F61610 /* RootToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93B5712625498F00F61610 /* RootToolView.swift */; };
 		0A93B57526256F3B00F61610 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93B57426256F3B00F61610 /* MenuCell.swift */; };
-		0AA23B222626DA27009D0115 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B212626DA27009D0115 /* ToolBar.swift */; };
 		0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B242627C7FE009D0115 /* ShowValue.swift */; };
 		0AA23B2B2628207A009D0115 /* MeaBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA23B2A2628207A009D0115 /* MeaBar.swift */; };
 		0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC0006D262D187C00D200A7 /* ProgressHUD.swift */; };
 		0AC67F50263A87570099BBFD /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC67F4F263A87510099BBFD /* libsqlite3.0.tbd */; };
 		0AC67F54263A89A20099BBFD /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC67F53263A89A20099BBFD /* SQLiteManager.swift */; };
 		0AC67F5B263A8D550099BBFD /* MarkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC67F5A263A8D550099BBFD /* MarkEntity.swift */; };
-		0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAD715262689CE00E80815 /* SegmentedControl.swift */; };
 		A83C20FCF7F3DB5EF62C97D5 /* Pods_XunCha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A3FA3F21C0C565E88621F /* Pods_XunCha.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +49,16 @@
 		0A10869C2638EDDD00B120AD /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSegmentedControl.swift; sourceTree = "<group>"; };
 		0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMenu.swift; sourceTree = "<group>"; };
+		0A1BFD0B26467DE800A8ABE1 /* TheMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMarkViewController.swift; sourceTree = "<group>"; };
+		0A1BFD0D26467F0F00A8ABE1 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		0A1BFD0F26467F4400A8ABE1 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
+		0A2129FE2648B69100421A9C /* ShowMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMarkViewController.swift; sourceTree = "<group>"; };
+		0A309ED1264A121B005BDC53 /* EnlargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargeButton.swift; sourceTree = "<group>"; };
 		0A447F8C2623E83500975E8D /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = ../../../Library/SDKs/ArcGIS/iOS/Frameworks/Dynamic/ArcGIS.framework; sourceTree = "<group>"; };
 		0A447F902623EC7900975E8D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		0A4AD123264375A300F9DCA6 /* SQLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLModel.swift; sourceTree = "<group>"; };
+		0A4AD1262643786A00F9DCA6 /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		0A4AD1292643C1A200F9DCA6 /* DrawGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawGraphics.swift; sourceTree = "<group>"; };
 		0A562EB62623D4710029C2A5 /* XunCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A562EB92623D4710029C2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A562EC02623D4710029C2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +72,6 @@
 		0A93B56E2625419B00F61610 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0A93B5712625498F00F61610 /* RootToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToolView.swift; sourceTree = "<group>"; };
 		0A93B57426256F3B00F61610 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		0AA23B212626DA27009D0115 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		0AA23B242627C7FE009D0115 /* ShowValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValue.swift; sourceTree = "<group>"; };
 		0AA23B2A2628207A009D0115 /* MeaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaBar.swift; sourceTree = "<group>"; };
 		0AC0006D262D187C00D200A7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -66,7 +79,6 @@
 		0AC67F53263A89A20099BBFD /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		0AC67F56263A8B6C0099BBFD /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		0AC67F5A263A8D550099BBFD /* MarkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkEntity.swift; sourceTree = "<group>"; };
-		0ACAD715262689CE00E80815 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		65A6D1DF5825D1B0DD55F835 /* Pods-XunCha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunCha.debug.xcconfig"; path = "Target Support Files/Pods-XunCha/Pods-XunCha.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D422B3CF0064287D40A983 /* Pods-XunCha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunCha.release.xcconfig"; path = "Target Support Files/Pods-XunCha/Pods-XunCha.release.xcconfig"; sourceTree = "<group>"; };
 		F47A3FA3F21C0C565E88621F /* Pods_XunCha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XunCha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,11 +182,10 @@
 				0A93B55426251EE700F61610 /* LocationButton.swift */,
 				0A93B5712625498F00F61610 /* RootToolView.swift */,
 				0A93B57426256F3B00F61610 /* MenuCell.swift */,
-				0ACAD715262689CE00E80815 /* SegmentedControl.swift */,
-				0AA23B212626DA27009D0115 /* ToolBar.swift */,
 				0AA23B2A2628207A009D0115 /* MeaBar.swift */,
 				0A10869C2638EDDD00B120AD /* MenuButton.swift */,
 				0A10869F2639371E00B120AD /* MarkSegmentedControl.swift */,
+				0A309ED1264A121B005BDC53 /* EnlargeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +205,10 @@
 				0A93B56E2625419B00F61610 /* MenuTableViewController.swift */,
 				0A0644202629655E00C56C6C /* FirstViewController.swift */,
 				0A1086962637F20400B120AD /* MarkViewController.swift */,
+				0A1BFD0B26467DE800A8ABE1 /* TheMarkViewController.swift */,
+				0A1BFD0D26467F0F00A8ABE1 /* ImagePreviewViewController.swift */,
+				0A1BFD0F26467F4400A8ABE1 /* ImagePreviewCell.swift */,
+				0A2129FE2648B69100421A9C /* ShowMarkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +222,7 @@
 				0A93B55D26252ABA00F61610 /* SelectorInterface.swift */,
 				0AA23B242627C7FE009D0115 /* ShowValue.swift */,
 				0A11FEB8263A5D9F00356D8B /* MarkMenu.swift */,
+				0A4AD1292643C1A200F9DCA6 /* DrawGraphics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC67F53263A89A20099BBFD /* SQLiteManager.swift */,
+				0A4AD123264375A300F9DCA6 /* SQLModel.swift */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC67F5A263A8D550099BBFD /* MarkEntity.swift */,
+				0A4AD1262643786A00F9DCA6 /* Mark.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -358,28 +376,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A309ED2264A121B005BDC53 /* EnlargeButton.swift in Sources */,
 				0A0644212629655E00C56C6C /* FirstViewController.swift in Sources */,
+				0A1BFD0E26467F0F00A8ABE1 /* ImagePreviewViewController.swift in Sources */,
 				0AA23B252627C7FE009D0115 /* ShowValue.swift in Sources */,
 				0AC0006E262D187C00D200A7 /* ProgressHUD.swift in Sources */,
+				0A1BFD0C26467DE800A8ABE1 /* TheMarkViewController.swift in Sources */,
 				0A93B55A262529A500F61610 /* Selector.swift in Sources */,
 				0AC67F54263A89A20099BBFD /* SQLiteManager.swift in Sources */,
 				0A1086A02639371E00B120AD /* MarkSegmentedControl.swift in Sources */,
 				0A93B56F2625419B00F61610 /* MenuTableViewController.swift in Sources */,
 				0A93B57526256F3B00F61610 /* MenuCell.swift in Sources */,
+				0A4AD1272643786A00F9DCA6 /* Mark.swift in Sources */,
+				0A4AD124264375A300F9DCA6 /* SQLModel.swift in Sources */,
 				0A93B5722625498F00F61610 /* RootToolView.swift in Sources */,
 				0AC67F5B263A8D550099BBFD /* MarkEntity.swift in Sources */,
 				0AA23B2B2628207A009D0115 /* MeaBar.swift in Sources */,
 				0A93B55526251EE700F61610 /* LocationButton.swift in Sources */,
 				0A93B55E26252ABA00F61610 /* SelectorInterface.swift in Sources */,
 				0A562EEA2623E5350029C2A5 /* Map.swift in Sources */,
+				0A1BFD1026467F4400A8ABE1 /* ImagePreviewCell.swift in Sources */,
 				0A562EBA2623D4710029C2A5 /* AppDelegate.swift in Sources */,
 				0A11FEB9263A5D9F00356D8B /* MarkMenu.swift in Sources */,
 				0A10869A26380E9C00B120AD /* UIImage+Extension.swift in Sources */,
-				0ACAD716262689CE00E80815 /* SegmentedControl.swift in Sources */,
 				0A10869D2638EDDD00B120AD /* MenuButton.swift in Sources */,
+				0A2129FF2648B69100421A9C /* ShowMarkViewController.swift in Sources */,
 				0A1086972637F20400B120AD /* MarkViewController.swift in Sources */,
 				0A447F912623EC7900975E8D /* RootViewController.swift in Sources */,
-				0AA23B222626DA27009D0115 /* ToolBar.swift in Sources */,
+				0A4AD12A2643C1A200F9DCA6 /* DrawGraphics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -574,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhgis.app.jhxc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -29,3 +29,10 @@ extension UIImage {
         return reSizeImage(reSize: reSize)
     }
 }
+
+extension UIImage {
+    func jpgToData(image: UIImage) -> Data {
+        let data = image.jpegData(compressionQuality: 0.8)
+        return data ?? Data()
+    }
+}

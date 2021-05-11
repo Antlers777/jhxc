@@ -25,7 +25,7 @@ class SelectorInterface: NSObject {
                 mapView.sketchEditor?.clearGeometry()
                 mapView.sketchEditor?.start(with: nil, creationMode: .freehandPolygon)
             }
-            
+            mapView.callout.dismiss()
             
         } else {
             RootViewController.measureToolbar.isHidden = true
@@ -39,11 +39,15 @@ class SelectorInterface: NSObject {
     
     open func mark(bool: Bool) {
         if bool {
-            
+            RootViewController.measureToolbar.isHidden = true
+            RootViewController.measureToolbar.lineSketchEditor.clearGeometry()
+            RootViewController.measureToolbar.areaSketchEditor.clearGeometry()
+            RootViewController.measureToolbar.areaFreeSketchEditor.clearGeometry()
+            mapView.sketchEditor?.stop()
             
             
         } else {
-            
+            mapView.callout.dismiss()
         }
     }
     

@@ -65,7 +65,7 @@ class SQLiteManager: NSObject {
     }
     
     func insertMark(name: String, info: String, type: Int, point: String) {
-        let sql = "INSERT INTO User(name,info,type,point) VALUES('\(name)','\(info)','\(type)','\(point)');"
+        let sql = "INSERT INTO Mark(name,info,type,point) VALUES('\(name)','\(info)','\(type)','\(point)');"
     }
     
 }

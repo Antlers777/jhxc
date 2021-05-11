@@ -12,9 +12,9 @@ class MenuButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setImage(UIImage(named: "more")?.reSizeImage(reSize: CGSize(width: 25, height: 25)), for: .normal)
+        setImage(UIImage(named: "menu")?.reSizeImage(reSize: CGSize(width: 25, height: 25)), for: .normal)
         backgroundColor = .white
-        layer.cornerRadius = 8
+        layer.cornerRadius = 10
        
         
     }
