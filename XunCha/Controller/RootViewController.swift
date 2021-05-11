@@ -19,6 +19,7 @@ import RxCocoa
 var goon = false
 var calloutGraphic = AGSGraphic()
 class RootViewController: UIViewController {
+    
     var mark = MarkMenu.normal
     static var measureToolbar: MeasureToolbar!
     static let markSegmentC = UISegmentedControl(items: ["★","✘","文"])
@@ -170,6 +171,8 @@ extension RootViewController {
         
         //
         RootViewController.markSegmentC.addTarget(self, action: .markSegmentValueSelector, for: .valueChanged)
+        
+        // 
         
 
     }
