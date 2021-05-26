@@ -19,5 +19,8 @@ target 'XunCha' do
   pod 'ImagePicker'
   pod 'RxSwift', '~> 5.0'
   pod 'RxCocoa', '~> 5.0'
-  pod 'RxBlocking', '~> 5.0'
+  #pod 'RxBlocking', '~> 5.0'
+  pod 'MJRefresh'
+  pod 'KeychainSwift', '~> 19.0'
+  pod "PYSearch"
 end

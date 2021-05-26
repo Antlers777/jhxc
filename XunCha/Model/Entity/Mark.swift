@@ -13,8 +13,9 @@ class Mark: SQLModel {
     var type: Int = -1
     var name: String = ""
     var info: String = ""
-    var x: Double = 0.0
-    var y: Double = 0.0
+    var x: String = ""
+    var y: String = ""
     var sr: Int = 0
     var data: Data = Data()
+    var time: String = ""
 }

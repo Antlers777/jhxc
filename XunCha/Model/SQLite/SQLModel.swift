@@ -298,7 +298,7 @@ extension SQLModelProtocol where Self: SQLModel {
             while res.next() {
                 let t = self.init()
                 for (key, _) in data {
-                    if let val = res.object(forColumn: key) {
+                    if let val = res.object(forColumnName: key) {
                         t.setValue(val, forKey:key)
                     }
                 }

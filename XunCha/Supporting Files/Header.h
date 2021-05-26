@@ -8,5 +8,8 @@
 #ifndef Header_h
 #define Header_h
 
+//#import "FMDB.h"
 #import "FMDB.h"
+//#import "SpatialDatabase.h"
+//#import "ShapeKit.h"
 #endif /* Header_h */

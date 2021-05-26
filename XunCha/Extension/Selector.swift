@@ -11,9 +11,9 @@ import UIKit
 extension Selector {
     
     static let editSelector = #selector(EditCell.edit)
+    static let kmlSelector = #selector(KMLCell.kml)
     static let markSelector = #selector(MarkCell.mark)
     static let menuSelector = #selector(RootViewController.menu)
-    static let trashMarkSelector = #selector(MarkViewController.trashMark(_:))
-    static let saveMarkSelector = #selector(MarkViewController.saveMark)
     static let markSegmentValueSelector = #selector(RootViewController.segmentDidchange)
+    
 }

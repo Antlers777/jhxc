@@ -17,7 +17,7 @@ class DrawGraphics: NSObject {
         graphicsOverlay.clearSelection()
         let marks = Mark.rows()
         marks.forEach({item in  // AGSPoint: (495676.130671, 4314495.306494), sr: 4548
-            var point: AGSPoint = AGSPoint.init(x: item.x, y: item.y, spatialReference: AGSSpatialReference.init(wkid: item.sr ))
+            var point: AGSPoint = AGSPoint.init(x: Double(item.x)!, y: Double(item.y)!, spatialReference: AGSSpatialReference.init(wkid: item.sr ))
             drawGraphics(type: item.type, name: item.name, info: item.info, point: point)
         })
         guard marks.count != graphicsOverlay.graphics.count else {
